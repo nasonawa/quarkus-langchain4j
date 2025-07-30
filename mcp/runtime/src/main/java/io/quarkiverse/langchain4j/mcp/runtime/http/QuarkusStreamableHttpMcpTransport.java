@@ -143,7 +143,7 @@ public class QuarkusStreamableHttpMcpTransport implements McpTransport {
                                         log.debug("Assigned MCP session ID: " + mcpSessionId);
                                         this.mcpSessionId.set(mcpSessionId);
                                     }
-                                    
+
                                     RecordParser sseEventparser = RecordParser.newDelimited("\n\n", bodyBuffer -> {
                                         String responseString = bodyBuffer.toString();
                                         SseEvent<String> sseEvent = parseSseEvent(responseString);
